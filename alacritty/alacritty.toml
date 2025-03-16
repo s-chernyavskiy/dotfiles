@@ -1,0 +1,21 @@
+[general]
+import = ["everforest_dark.toml"]
+
+[window]
+opacity = 0.95 
+decorations = "transparent"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "Mononoki Nerd Font"
+
+[font.bold_italic]
+family = "Mononoki Nerd Font"
+
+[font.italic]
+family = "Mononoki Nerd Font"
+
+[font.normal]
+family = "Mononoki Nerd Font"

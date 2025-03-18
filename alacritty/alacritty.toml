@@ -1,21 +1,17 @@
 [general]
-import = ["everforest_dark.toml"]
-
-[window]
-opacity = 0.95 
-decorations = "transparent"
+import = ["alabaster_dark.toml"]
 
 [font]
-size = 13.0
+size = 10.0
 
 [font.bold]
-family = "Mononoki Nerd Font"
+family = "InconsolataGo Nerd Font"
 
 [font.bold_italic]
-family = "Mononoki Nerd Font"
+family = "InconsolataGo Nerd Font"
 
 [font.italic]
-family = "Mononoki Nerd Font"
+family = "InconsolataGo Nerd Font"
 
 [font.normal]
-family = "Mononoki Nerd Font"
+family = "InconsolataGo Nerd Font"

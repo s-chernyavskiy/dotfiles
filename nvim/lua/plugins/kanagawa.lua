@@ -1,7 +1,7 @@
 return {
 	"rebelot/kanagawa.nvim",
-	-- lazy = false,
-	-- priority = 1000,
+	lazy = false,
+	priority = 1000,
 	config = function()
 		local kanagawa = require("kanagawa")
 		local flavor = "dragon"
@@ -15,18 +15,17 @@ return {
 			statementStyle = { bold = true },
 			typeStyle = {},
 			transparent = true, -- do not set background color
-			dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+			dimInactive = true, -- dim inactive window `:h hl-NormalNC`
 			terminalColors = true, -- define vim.g.terminal_color_{0,17}
 			colors = { -- add/modify theme and palette colors
 				palette = {},
-				theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+				theme = { all = { ui = { bg_gutter = "none" } } },
 			},
-			overrides = function(colors) -- add/modify highlights
-				return {}
-			end,
-			theme = "dragon", -- Load "wave" theme when 'background' option is not set
+			theme = "wave", -- Load "wave" theme when 'background' option is not set
 		})
 
 		kanagawa.load(flavor)
+        vim.cmd([[hi TelescopeBorder guibg=none]])
+        vim.cmd([[hi TelescopeTitle guibg=none]])
 	end,
 }

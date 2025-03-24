@@ -18,6 +18,7 @@ return {
 					background_colour = "#000000",
 					render = "minimal",
 					timeout = 1,
+                    level = "error"
 				})
 			end,
 		},

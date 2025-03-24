@@ -2,16 +2,16 @@
 import = ["alabaster_dark.toml"]
 
 [font]
-size = 10.0
+size = 12.0
 
 [font.bold]
-family = "InconsolataGo Nerd Font"
+family = "Inconsolata LGC Nerd Font"
 
 [font.bold_italic]
-family = "InconsolataGo Nerd Font"
+family = "Inconsolata LGC Nerd Font"
 
 [font.italic]
-family = "InconsolataGo Nerd Font"
+family = "Inconsolata LGC Nerd Font"
 
 [font.normal]
-family = "InconsolataGo Nerd Font"
+family = "Inconsolata LGC Nerd Font"

@@ -1,5 +1,5 @@
 local config = function()
-	local theme = require("lualine.themes.16color")
+	local theme = require("lualine.themes.everforest")
 	theme.normal.c.bg = nil
 
 	require("lualine").setup({
@@ -12,6 +12,12 @@ local config = function()
 			lualine_a = {
 				"buffers",
 			},
+			lualine_b = {
+				"mode",
+			},
+            lualine_c = {
+                "branch",
+            }
 		},
 	})
 end

@@ -48,16 +48,46 @@ local config = function()
 		single_file_support = true,
 	})
 
+	vim.g.rustaceanvim = {
+		-- Plugin configuration
+		tools = {},
+		-- LSP configuration
+		server = {
+			on_attach = on_attach,
+			settings = {
+				-- rust-analyzer language server configuration
+				["rust-analyzer"] = {
+				},
+			},
+		},
+		dap = {
+        },
+	}
+
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 
 	local golangci_lint = require("efmls-configs.linters.golangci_lint")
 	local gofumpt = require("efmls-configs.formatters.gofumpt")
 
+    local ast_grep = {
+        lintCommand = "sg lint --format json --no-ignore --quiet --pattern '${INPUT}'",
+        lintStdin = true,
+        lintFormats = {"%f:%l:%c: %m"},
+        lintSource = "ast-grep",
+        lintIgnoreExitCode = true,
+    }
+
+    local rustfmt = {
+        formatCommand = "rustfmt --edition 2024 --emit stdout --quiet",
+        formatStdin = true,
+    }
+
 	lspconfig.efm.setup({
 		filetypes = {
 			"lua",
 			"go",
+            "rust",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -71,6 +101,7 @@ local config = function()
 			languages = {
 				lua = { luacheck, stylua },
 				go = { golangci_lint, gofumpt },
+                rust = { ast_grep, rustfmt },
 			},
 		},
 	})
@@ -92,6 +123,9 @@ end
 
 return {
 	"neovim/nvim-lspconfig",
+	opts = {
+		inlay_hint = { enable = true},
+	},
 	config = config,
 	lazy = false,
 	dependencies = {
